@@ -260,15 +260,57 @@
     </div>
   </section>
   
-  <!-- Footer -->
+  <!-- Footer with dynamic year -->
   <footer>
     <div class="footer-content">
-      <p class="footer-text">© 2023-2025 Alok Video Editor. All Rights Reserved.</p>
+      <p class="footer-text">© 2023-<span id="dynamicYear"></span> Alok Video Editor. All Rights Reserved.</p>
       <div class="social-links">
         <a href="https://www.youtube.com/@alokmto" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
         <a href="https://www.instagram.com/alokmto/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </footer>
+  
+  <script>
+    // Dynamic year functionality
+    function updateYear() {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const newYear = new Date(currentYear, 0, 1); // January 1st of current year
+      
+      // Check if we're past New Year
+      if (now >= newYear) {
+        // We're in the current year
+        return currentYear;
+      } else {
+        // We're still in the previous year
+        return currentYear - 1;
+      }
+    }
+    
+    // Set the initial year
+    document.getElementById('dynamicYear').textContent = updateYear();
+    
+    // Set an interval to update the year every day at midnight
+    function setMidnightInterval() {
+      const now = new Date();
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0); // Set to midnight of the next day
+      
+      const msToMidnight = midnight - now;
+      
+      // Set a timeout to run at midnight
+      setTimeout(function() {
+        document.getElementById('dynamicYear').textContent = updateYear();
+        // Then set an interval to run every day at midnight
+        setInterval(function() {
+          document.getElementById('dynamicYear').textContent = updateYear();
+        }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+      }, msToMidnight);
+    }
+    
+    // Call the function to set the midnight interval
+    setMidnightInterval();
+  </script>
 </body>
 </html>
