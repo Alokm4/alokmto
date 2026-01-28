@@ -30,5 +30,13 @@ const projectData = [
         description: "Rectangle_V3 have All Direction Control left, Right, Top, Bottom.",
         file: "Macro/Rectangle_V3.zip" // Ensure this file exists in your Macro folder
     },
+    {
+        id: "Cinema_Bar",
+        type: "plugin",
+        name: "Rectangle_V3",
+        description: "This is not only Cinema_Bar.....",
+        file: "plugin/CinemaBar.zip" // Ensure this file exists in your Macro folder
+    },
     // Add more items here...
 ];
+
