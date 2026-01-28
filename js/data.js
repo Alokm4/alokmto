@@ -35,8 +35,9 @@ const projectData = [
         type: "plugin",
         name: "Rectangle_V3",
         description: "This is not only Cinema_Bar.....",
-        file: "plugin/CinemaBar.zip" // Ensure this file exists in your Macro folder
+        file: "Plugin/CinemaBar.zip" // Ensure this file exists in your Macro folder
     },
     // Add more items here...
 ];
+
 
