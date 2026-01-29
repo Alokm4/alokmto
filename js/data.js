@@ -31,7 +31,7 @@ const projectData = [
         file: "Macro/Rectangle_V3.zip" // Ensure this file exists in your Macro folder
     },
     {
-        id: "Cinema_Bar",
+        id: "CinemaBar",
         type: "plugin",
         name: "Cinema_Bar",
         description: "This is not only Cinema_Bar.....",
@@ -39,6 +39,7 @@ const projectData = [
     },
     // Add more items here...
 ];
+
 
 
 
